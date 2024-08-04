@@ -1,0 +1,14 @@
+{
+  "name": "create-treact",
+  "version": "1.0.0",
+  "type": "module",
+  "author": "dztony",
+  "license": "MIT",
+  "bin": {
+    "create-treact": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": []
+}
