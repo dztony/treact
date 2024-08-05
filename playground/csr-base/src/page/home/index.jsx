@@ -5,7 +5,7 @@ import Icon from '../../asset/icon.jpg';
 function Home() {
   return (
     <div className={css.home}>
-      Home page
+      Home page123
 
       <img src={Icon} />
     </div>

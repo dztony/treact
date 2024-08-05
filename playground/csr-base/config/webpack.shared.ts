@@ -2,38 +2,19 @@ import path from 'node:path';
 import PluginHtmlWebpack from "html-webpack-plugin";
 import PluginMiniCssExtract from 'mini-css-extract-plugin';
 import PluginTerserWebpack from 'terser-webpack-plugin';
-import PluginFriendlyErrors from "friendly-errors-webpack-plugin";
 import webpack from 'webpack';
 
-import { getDirname, vconsole } from "./utils.js";
+import { getDirname } from "./helper/utils.ts";
 
 const __dirname = getDirname(import.meta.url);
-let progressStartTime = 0;
 
 export default {
   entry: path.resolve(__dirname, '../src/index.jsx'),
   output: {
-    // filename: 'js/[name]_[contenthash:8].js',
-    // filename: (pathData, assetInfo) => {
-    //   let currentChunkName = pathData.chunk.name;
-    //   console.log('chunkname - ', currentChunkName, pathData.chunk);
-    //   if (!currentChunkName) {
-    //     return 'js/chunk_[path]_[id]_[contenthash:8].js';
-    //   } else if (currentChunkName === 'main') {
-    //     return 'js/entry_[contenthash:8].js';
-    //   } else {
-    //     return 'js/[name]_[contenthash:8].js';
-    //   }
-    // },
-    // chunkFilename: "js/chunk_[name]_[contenthash:8].js",
-    // chunkFilename: (_, assetInfo) => {
-    //   let currentChunkName = pathData.chunk.name;
-    //   console.log('assetInfo - ', currentChunkName, assetInfo);
-    //   return "js/chunk_[name]_[contenthash:8].js";
-    // },
     path: path.resolve(__dirname, '../dist'),
     filename: 'js/[name].[contenthash:8].js',
     chunkFilename: 'js/[name].[contenthash:8].async.js',
+    publicPath: '/',
     clean: true,
   },
   module: {
@@ -89,20 +70,6 @@ export default {
     ],
   },
   plugins: [
-    // new webpack.ProgressPlugin({
-    //   handler(percentage, message, ...args) {
-    //     if (percentage <= 0.03) {
-    //       progressStartTime = Date.now();
-    //     }else if (percentage > 0.03 && percentage < 1){
-    //       // console.log(`进度：${(percentage * 100).toFixed(0) + '% '}：${message}：${args.join(' ')}`)
-    //     }else if (percentage === 1) {
-    //       const cost = Date.now() - progressStartTime;
-    //       process.stdout.write('\n');
-    //       // vconsole.log(`编译完成，耗时：${cost}ms`);
-    //     }
-    //   },
-    // }),
-    // new PluginFriendlyErrors(),
     new webpack.DefinePlugin({
       'process.env.TEST_VALUE': JSON.stringify('test value from define plugin'),
     }),
