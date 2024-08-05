@@ -1,6 +1,6 @@
 {
   "name": "@dztony/create-treact",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "author": "dztony",
   "license": "MIT",
@@ -15,7 +15,6 @@
   ],
   "scripts": {
     "build": "unbuild",
-    "publish": "npm publish",
     "test": "node index.js"
   },
   "keywords": [],
