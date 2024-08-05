@@ -15,9 +15,9 @@ export function parseCommandOptions() {
     .description(pkg.description)
 
   program
-    .option('-n, --name', 'New project name, default name is treact-sample-<timestamp>', `treact-sample-${new Date().getTime()}`)
+    .option('-n, --name <string>', 'New project name, default name is treact-sample-<timestamp>', `treact-sample-${new Date().getTime()}`)
     .option(
-      '-m, --mode',
+      '-m, --mode <string>',
       `render mode, default value is ${pc.bgCyan(EnumMode.csr)}, option value is ${pc.cyan(EnumMode.csr)} or ${pc.cyan(EnumMode.ssr)}`,
       EnumMode.csr,
       )

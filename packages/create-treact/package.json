@@ -1,6 +1,6 @@
 {
   "name": "@dztony/create-treact",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "author": "dztony",
   "description": "treact generator",
@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "build": "unbuild",
-    "test": "tsx src/index.ts -n treact-app"
+    "test": "tsx src/index.ts -n treact-app -m ssr"
   },
   "keywords": [],
   "devDependencies": {
