@@ -1,6 +1,6 @@
 {
   "name": "@dztony/create-treact",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "author": "dztony",
   "license": "MIT",
@@ -9,11 +9,14 @@
     "@dztony/create-treact": "index.js"
   },
   "files": [
-    "index.js"
+    "dist",
+    "index.js",
+    "template"
   ],
   "scripts": {
     "build": "unbuild",
-    "test":"node index.js"
+    "publish": "npm publish",
+    "test": "node index.js"
   },
   "keywords": [],
   "devDependencies": {
