@@ -8,6 +8,8 @@
   "author": "dztony",
   "type": "module",
   "scripts": {
+    "build:create-treact": "pnpm --filter @dztony/create-treact run build",
+    "test:create-treact": "pnpm --filter @dztony/create-treact run test",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

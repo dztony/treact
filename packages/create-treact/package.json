@@ -4,6 +4,7 @@
   "type": "module",
   "author": "dztony",
   "license": "MIT",
+  "private": false,
   "bin": {
     "@dztony/create-treact": "index.js"
   },
@@ -11,10 +12,12 @@
     "index.js"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "unbuild",
+    "test":"node index.js"
   },
   "keywords": [],
   "devDependencies": {
+    "@types/node": "^22.1.0",
     "unbuild": "^2.0.0"
   }
 }
