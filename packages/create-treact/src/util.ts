@@ -1,13 +1,24 @@
 import { Command } from 'commander';
-import pkg from '../package.json';
 import pc from 'picocolors';
+import fs from 'node:fs';
+import path from 'node:path';
+import url from 'node:url';
 
-enum EnumMode {
+import pkg from '../package.json';
+
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+
+export enum EnumMode {
   csr = 'csr',
   ssr = 'ssr',
 }
 
-export function parseCommandOptions() {
+type IOptions = {
+  name: string;
+  mode: EnumMode;
+};
+
+export function parseCommandOptions(): IOptions {
   const program = new Command();
   program
     .name(pkg.name)
@@ -23,5 +34,16 @@ export function parseCommandOptions() {
       )
 
   program.parse();
-  return program.opts();
+  return program.opts() as IOptions;
+}
+
+export function chooseTemplate(mode: EnumMode) {
+  const expectedTemplate = `template-react-${mode}`;
+
+  const templateNameList = fs.readdirSync(path.join(__dirname, '../template'));
+  if (!templateNameList.includes(expectedTemplate)) {
+    throw Error(`template ${pc.cyan(expectedTemplate)} not found, please submit a issue to ${pc.blue('https://github.com/dztony/treact')}`);
+  }
+
+  return path.join(__dirname, '../template', expectedTemplate);
 }
