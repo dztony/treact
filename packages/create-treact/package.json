@@ -16,18 +16,20 @@
   ],
   "scripts": {
     "build": "unbuild",
-    "test": "tsx src/index.ts -n treact-app -m ssr",
+    "test": "tsx src/index.ts -n treact-app -m csr",
     "prepublish": "pnpm run build"
   },
   "keywords": [],
   "devDependencies": {
     "@types/commander": "^2.12.2",
+    "@types/figlet": "^1.5.8",
     "@types/node": "^22.1.0",
     "tsx": "^4.16.5",
     "unbuild": "^2.0.0"
   },
   "dependencies": {
     "commander": "^12.1.0",
+    "figlet": "^1.7.0",
     "picocolors": "^1.0.1"
   }
 }
