@@ -17,6 +17,7 @@
   "scripts": {
     "build": "unbuild",
     "test": "tsx src/index.ts -n treact-app -m csr",
+    "pub": "npm publish",
     "prepublish": "pnpm run build"
   },
   "keywords": [],
