@@ -1,4 +1,5 @@
 import React, { lazy } from 'react';
+import Policy from "./page/policy/index.jsx";
 
 export const routeConfigList = [
   {
@@ -25,6 +26,15 @@ export const routeConfigList = [
           const Book = (await import(/* webpackChunkName: "page_book" */ './page/book/index.jsx')).default;
           return {
             Component: Book,
+          };
+        },
+      },
+      {
+        path: 'policy',
+        async lazy() {
+          const Policy = (await import(/* webpackChunkName: "page_book" */ './page/policy/index.jsx')).default;
+          return {
+            Component: Policy,
           };
         },
       },
