@@ -7,5 +7,12 @@
   - react fast refresh 插件地址：https://github.com/pmmmwh/react-refresh-webpack-plugin
 - CSS HMR、SASS HMR
   - 本地使用 style-loader，而不要对 css 文件进行单独抽离
-- 待实现的功能
-  - typescript 的 HMR
+- ts、tsx 等文件的 HMR
+  - 直接添加 babel 的 typescript 规则集
+
+## TODO
+- 文件路由？
+- 打包文件分类：图片、js、css 区分到不同的目录
+- 路径别名？
+- 替换 babel？使用 esbuild 或者 swc？需要调研
+

@@ -11,7 +11,7 @@ const cssLoader = isDev ? 'style-loader' : PluginMiniCssExtract.loader;
 const outputDir = isDev?  path.join(process.cwd(), 'src/.treact/tmp') : path.join(process.cwd(), 'dist');
 
 export default {
-  entry: path.resolve(process.cwd(), 'src/index.jsx'),
+  entry: path.resolve(process.cwd(), 'src/app.tsx'),
   output: {
     path: outputDir,
     filename: 'js/[name].[contenthash:8].js',
@@ -36,12 +36,16 @@ export default {
         }
       },
       {
-        test: /\.m?js|jsx$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+              '@babel/preset-typescript',
+            ],
           },
         },
       },
