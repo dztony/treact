@@ -5,6 +5,10 @@ import PluginTerserWebpack from 'terser-webpack-plugin';
 import webpack from 'webpack';
 import process from 'node:process';
 
+const isDev = process.env.NODE_ENV === 'development';
+
+const cssLoader = isDev ? 'style-loader' : PluginMiniCssExtract.loader;
+
 export default {
   entry: path.resolve(process.cwd(), 'src/index.jsx'),
   output: {
@@ -42,8 +46,7 @@ export default {
       {
         test: /\.(sass|scss|css)$/i,
         use: [
-          // 'style-loader',
-          PluginMiniCssExtract.loader,
+          cssLoader,
           {
             loader: 'css-loader',
             options: {

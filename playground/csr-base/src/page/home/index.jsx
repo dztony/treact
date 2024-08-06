@@ -7,7 +7,7 @@ function Home() {
 
   return (
     <div className={css.home}>
-      Home asdfads
+      Home asdfads123
 
       <div>
         <button onClick={() => setCount(pre => pre + 2)}>增加 2</button>
@@ -16,7 +16,7 @@ function Home() {
         <div>count - {count}</div>
       </div>
 
-      <div>
+      <div className={css.newDiv}>
         新增的 div 标签123123
       </div>
 
