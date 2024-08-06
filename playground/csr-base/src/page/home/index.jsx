@@ -17,7 +17,7 @@ function Home() {
       </div>
 
       <div className={css.newDiv}>
-        新增的 div 标签123123
+        新增的 div 标签
       </div>
 
       <img src={Icon} />

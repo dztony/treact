@@ -8,11 +8,12 @@ import process from 'node:process';
 const isDev = process.env.NODE_ENV === 'development';
 
 const cssLoader = isDev ? 'style-loader' : PluginMiniCssExtract.loader;
+const outputDir = isDev?  path.join(process.cwd(), 'src/.treact/tmp') : path.join(process.cwd(), 'dist');
 
 export default {
   entry: path.resolve(process.cwd(), 'src/index.jsx'),
   output: {
-    path: path.resolve(process.cwd(), 'dist'),
+    path: outputDir,
     filename: 'js/[name].[contenthash:8].js',
     chunkFilename: 'js/[name].[contenthash:8].async.js',
     publicPath: '/',
