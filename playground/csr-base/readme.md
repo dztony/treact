@@ -9,6 +9,8 @@
   - 本地使用 style-loader，而不要对 css 文件进行单独抽离
 - ts、tsx 等文件的 HMR
   - 直接添加 babel 的 typescript 规则集
+- HMR 参考：
+  - [react HMR 使用](https://juejin.cn/post/7096399501874692110) 。暂时没有发现文章中提到的 typescript 的问题，也可以正常使用
 
 ## TODO
 - 文件路由？
