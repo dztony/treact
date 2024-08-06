@@ -15,4 +15,8 @@
 - 打包文件分类：图片、js、css 区分到不同的目录
 - 路径别名？
 - 替换 babel？使用 esbuild 或者 swc？需要调研
-
+- 最终目标
+  - 抽象成库，对外只暴露 treact.config.ts 文件的入口
+  - 支持 treact dev 本地开发
+  - 支持 treact build 开发环境打包
+  - 支持 treact preview 本地预览
