@@ -1,14 +1,19 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import webpack from "webpack";
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import webpackConfig from '../config/webpack.dev';
+import { getDirname } from '../config/helper/utils';
+
+const __dirname = getDirname(import.meta.url);
 
 function __dev() {
   const app = express();
   const port = 8999;
-  const compiler = webpack(webpackConfig);
+  const compiler = webpack(webpackConfig as any);
 
   app.use(webpackDevMiddleware(compiler, {
     writeToDisk: true,
@@ -22,6 +27,12 @@ function __dev() {
   );
 
   app.use(webpackConfig.output.publicPath, express.static(webpackConfig.output.path));
+
+  app.get('*', (req: Request, res: Response) => {
+    const filePath = path.join(__dirname, '../dist/index.html');
+    const html = fs.readFileSync(filePath, 'utf8').toString();
+    res.send(html);
+  });
 
   app.listen(port, () => {
     console.log(`dev server start at - http://localhost:${port}`);

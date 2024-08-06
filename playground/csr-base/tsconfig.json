@@ -1,5 +1,5 @@
 {
-  "include": ["config", "src"],
+  "include": ["config",  "script", "src"],
   "compilerOptions": {
     "outDir": "dist",
     "target": "ES2022",

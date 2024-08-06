@@ -55,6 +55,7 @@ export default {
                 auto: true,
                 localIdentName: '[local]_[contenthash:8]',
               },
+              esModule: false,
             },
           },
           {
