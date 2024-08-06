@@ -7,7 +7,7 @@ function Home() {
 
   return (
     <div className={css.home}>
-      Home asdfads123
+      Home page after modify
 
       <div>
         <button onClick={() => setCount(pre => pre + 2)}>增加 2</button>

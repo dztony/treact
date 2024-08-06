@@ -19,6 +19,7 @@ export default {
     publicPath: '/',
     clean: true,
   },
+  stats: 'errors-warnings',
   module: {
     rules: [
       {
@@ -128,5 +129,4 @@ export default {
       },
     },
   },
-  stats: 'errors-only',
 };

@@ -27,7 +27,7 @@ function __dev() {
   app.use(webpackConfig.output.publicPath, express.static(webpackConfig.output.path));
 
   app.get('*', (req: Request, res: Response) => {
-    const filePath = path.join(process.cwd(), 'dist/index.html');
+    const filePath = path.join(webpackConfig.output.path, 'index.html');
     const html = fs.readFileSync(filePath, 'utf8').toString();
     res.send(html);
   });
