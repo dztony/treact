@@ -4,7 +4,6 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import fs from 'node:fs';
 import path from 'node:path';
-import process from 'node:process';
 
 import webpackConfig from './config/webpack.dev';
 

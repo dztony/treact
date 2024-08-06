@@ -13,6 +13,8 @@ export default merge(sharedConfig, {
   ],
   entry: [
     sharedConfig.entry,
-    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&name=client&hot=true&live-load=true',
+    // 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&name=client&hot=true&live-load=true',
+    // 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+    'webpack-hot-middleware/client',
   ],
 } as any);
