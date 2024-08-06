@@ -4,11 +4,9 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import fs from 'node:fs';
 import path from 'node:path';
+import process from 'node:process';
 
-import webpackConfig from '../config/webpack.dev';
-import { getDirname } from '../config/helper/utils';
-
-const __dirname = getDirname(import.meta.url);
+import webpackConfig from './config/webpack.dev';
 
 function __dev() {
   const app = express();
@@ -29,7 +27,7 @@ function __dev() {
   app.use(webpackConfig.output.publicPath, express.static(webpackConfig.output.path));
 
   app.get('*', (req: Request, res: Response) => {
-    const filePath = path.join(__dirname, '../dist/index.html');
+    const filePath = path.join(process.cwd(), 'dist/index.html');
     const html = fs.readFileSync(filePath, 'utf8').toString();
     res.send(html);
   });

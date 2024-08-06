@@ -3,15 +3,12 @@ import PluginHtmlWebpack from "html-webpack-plugin";
 import PluginMiniCssExtract from 'mini-css-extract-plugin';
 import PluginTerserWebpack from 'terser-webpack-plugin';
 import webpack from 'webpack';
-
-import { getDirname } from "./helper/utils.ts";
-
-const __dirname = getDirname(import.meta.url);
+import process from 'node:process';
 
 export default {
-  entry: path.resolve(__dirname, '../src/index.jsx'),
+  entry: path.resolve(process.cwd(), 'src/index.jsx'),
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(process.cwd(), 'dist'),
     filename: 'js/[name].[contenthash:8].js',
     chunkFilename: 'js/[name].[contenthash:8].async.js',
     publicPath: '/',
@@ -80,7 +77,7 @@ export default {
     }),
     new PluginHtmlWebpack({
       title: 'Template react',
-      template: path.resolve(__dirname, '../src/index.html'),
+      template: path.resolve(process.cwd(), 'src/index.html'),
       filename: 'index.html',
     }),
   ],
