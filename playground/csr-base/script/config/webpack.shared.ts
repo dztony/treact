@@ -19,6 +19,11 @@ export default {
     publicPath: '/',
     clean: true,
   },
+  resolve: {
+    alias: {
+      '@': path.join(process.cwd(), 'src'),
+    },
+  },
   stats: 'errors-warnings',
   module: {
     rules: [

@@ -15,6 +15,11 @@
     "noUnusedLocals": false,
     "esModuleInterop": true,
     "allowImportingTsExtensions": true,
-    "jsx": "react"
+    "jsx": "react",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   }
 }

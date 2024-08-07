@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import css from './index.module.scss';
-import Icon from '../../asset/icon.jpg';
-import { printLog } from '../../utils/common.ts';
+import Icon from '@/asset/icon.jpg';
+import { printLog } from '@/utils/common.ts';
 
 function Home() {
   const [count, setCount] = useState(0);

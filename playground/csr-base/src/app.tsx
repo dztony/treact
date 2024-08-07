@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { routeConfigList } from "./route.tsx";
+import { routeConfigList } from "@/route.tsx";
 
 function appEntryRender() {
   const domNode = document.getElementById('root') as HTMLElement;

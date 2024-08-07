@@ -14,7 +14,7 @@ function Layout() {
       <Outlet />
 
       <footer>
-        底部123
+        底部
       </footer>
     </div>
   );
