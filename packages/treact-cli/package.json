@@ -1,6 +1,6 @@
 {
   "name": "@dztony/treact-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "private": false,
   "type": "module",
@@ -9,10 +9,15 @@
     "prepublish": "pnpm build"
   },
   "bin": {
-    "treact": "dist/cli.mjs"
+    "treact": "index.js"
   },
+  "files": [
+    "dist",
+    "package.json",
+    "index.js"
+  ],
   "keywords": [],
-  "author": "",
+  "author": "dztony",
   "license": "ISC",
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
