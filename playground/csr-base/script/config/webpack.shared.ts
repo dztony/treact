@@ -47,7 +47,8 @@ export default {
         exclude: /node_modules/,
         use: {
           // loader: 'babel-loader',
-          loader: path.join(__dirname, '../../node_modules/babel-loader/lib/index.js'),
+          // loader: path.join(__dirname, '../../node_modules/babel-loader/lib/index.js'),
+          loader: 'babel-loader/lib/index.js',
           options: {
             presets: [
               '@babel/preset-env',
