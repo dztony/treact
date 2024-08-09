@@ -7,11 +7,10 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 export default defineBuildConfig({
   entries: [
-    "src/"
+    'src/'
   ],
   clean: true,
   outDir: 'dist',
-  dependencies: Object.keys(pkg.dependencies),
   declaration: true,
   failOnWarn: false,
   externals: [

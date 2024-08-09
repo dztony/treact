@@ -4,11 +4,13 @@ import PluginMiniCssExtract from 'mini-css-extract-plugin';
 import PluginTerserWebpack from 'terser-webpack-plugin';
 import webpack from 'webpack';
 import process from 'node:process';
+import { getDirname } from '../helper/utils.ts';
 
 const isDev = process.env.NODE_ENV === 'development';
 
 const cssLoader = isDev ? 'style-loader' : PluginMiniCssExtract.loader;
 const outputDir = isDev?  path.join(process.cwd(), 'src/.treact/tmp') : path.join(process.cwd(), 'dist');
+const __dirname = getDirname(import.meta.url);
 
 export default {
   entry: path.resolve(process.cwd(), 'src/app.tsx'),
@@ -44,7 +46,8 @@ export default {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          // loader: 'babel-loader',
+          loader: path.join(__dirname, '../../node_modules/babel-loader/lib/index.js'),
           options: {
             presets: [
               '@babel/preset-env',

@@ -47,7 +47,8 @@ export default {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          // loader: 'babel-loader',
+          loader: path.join(__dirname, '../../node_modules/babel-loader/lib/index.js'),
           options: {
             presets: [
               '@babel/preset-env',
