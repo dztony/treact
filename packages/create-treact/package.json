@@ -17,15 +17,11 @@
   "scripts": {
     "build": "unbuild",
     "test": "tsx src/index.ts -n treact-app -m csr",
-    "test:cli:dev": "treact dev",
-    "test:cli:build": "treact build",
-    "test:cli:preview": "treact preview",
     "pub": "npm publish",
     "prepublish": "pnpm run build"
   },
   "keywords": [],
   "devDependencies": {
-    "@dztony/treact-cli": "1.0.1",
     "@types/commander": "^2.12.2",
     "@types/figlet": "^1.5.8",
     "@types/node": "^22.1.0",
