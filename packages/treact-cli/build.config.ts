@@ -6,12 +6,13 @@ import pkg from './package.json';
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 export default defineBuildConfig({
-  entries: ['src/cli.ts'],
+  entries: [
+    "src/"
+  ],
   clean: true,
   outDir: 'dist',
-  name: 'index.mjs',
   dependencies: Object.keys(pkg.dependencies),
-  declaration: false,
+  declaration: true,
   failOnWarn: false,
   externals: [
     /node_modules/
