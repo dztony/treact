@@ -6,11 +6,12 @@ import webpack from 'webpack';
 import process from 'node:process';
 // import { getDirname } from '../helper/utils';
 
-const isDev = process.env.NODE_ENV === 'development';
+const isDev = process.env.NODE_ENV !== 'production';
 
 const cssLoader = isDev ? 'style-loader' : PluginMiniCssExtract.loader;
 const outputDir = isDev?  path.join(process.cwd(), 'src/.treact/tmp') : path.join(process.cwd(), 'dist');
 // const __dirname = getDirname(import.meta.url);
+console.log('outputDir - ', outputDir, process.cwd());
 
 export default {
   entry: path.resolve(process.cwd(), 'src/app.tsx'),
