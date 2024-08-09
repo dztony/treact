@@ -5,7 +5,9 @@ import PluginTerserWebpack from 'terser-webpack-plugin';
 import webpack from 'webpack';
 import process from 'node:process';
 import { getDirname } from '../helper/utils.ts';
+import { createRequire } from 'node:module';
 
+const require = createRequire(import.meta.url);
 const isDev = process.env.NODE_ENV === 'development';
 
 const cssLoader = isDev ? 'style-loader' : PluginMiniCssExtract.loader;
@@ -47,8 +49,7 @@ export default {
         exclude: /node_modules/,
         use: {
           // loader: 'babel-loader',
-          // loader: path.join(__dirname, '../../node_modules/babel-loader/lib/index.js'),
-          loader: 'babel-loader/lib/index.js',
+          loader: require.resolve('babel-loader'),
           options: {
             presets: [
               '@babel/preset-env',
