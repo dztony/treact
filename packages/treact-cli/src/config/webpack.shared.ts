@@ -4,14 +4,13 @@ import PluginMiniCssExtract from 'mini-css-extract-plugin';
 import PluginTerserWebpack from 'terser-webpack-plugin';
 import webpack from 'webpack';
 import process from 'node:process';
-// import { getDirname } from '../helper/utils';
+import { getDirname } from '../helper/utils';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
 const cssLoader = isDev ? 'style-loader' : PluginMiniCssExtract.loader;
 const outputDir = isDev?  path.join(process.cwd(), 'src/.treact/tmp') : path.join(process.cwd(), 'dist');
-// const __dirname = getDirname(import.meta.url);
-console.log('outputDir - ', outputDir, process.cwd());
+const __dirname = getDirname(import.meta.url);
 
 export default {
   entry: path.resolve(process.cwd(), 'src/app.tsx'),
