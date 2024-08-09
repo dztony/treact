@@ -3,6 +3,5 @@ packages:
   - '.'
   # all packages in subdirs of packages/
   - 'packages/**'
-  - 'playground/**'
   # exclude packages that are inside test/ directories
   - '!**/test/**' # '!' means exclude
