@@ -3,6 +3,9 @@ import sharedConfig from './webpack.shared.ts';
 import { merge } from 'webpack-merge';
 import webpack from 'webpack';
 import PluginReactRefresh from '@pmmmwh/react-refresh-webpack-plugin';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
 
 export default merge(sharedConfig, {
   mode: 'development',
@@ -15,6 +18,7 @@ export default merge(sharedConfig, {
     sharedConfig.entry,
     // 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&name=client&hot=true&live-load=true',
     // 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-    'webpack-hot-middleware/client',
+    // 'webpack-hot-middleware/client',
+    require.resolve('webpack-hot-middleware/client'),
   ],
 } as any);
