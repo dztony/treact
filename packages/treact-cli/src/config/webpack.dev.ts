@@ -3,6 +3,9 @@ import sharedConfig from './webpack.shared';
 import { merge } from 'webpack-merge';
 import webpack from 'webpack';
 import PluginReactRefresh from '@pmmmwh/react-refresh-webpack-plugin';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
 
 export default merge(sharedConfig, {
   mode: 'development',
