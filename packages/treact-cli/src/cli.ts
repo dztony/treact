@@ -1,3 +1,5 @@
+import { Dev } from './dev';
+
 function __cli() {
   const args = process.argv.slice(2);
   console.log('args - ', args);
@@ -8,6 +10,7 @@ function __cli() {
 
   if (args[0] === EnumCommand.dev) {
     console.log('启动本地开发服务器');
+    Dev();
   } else if (args[0] === EnumCommand.build) {
     console.log('开启本地构建');
   } else if (args[0] === EnumCommand.preview) {
