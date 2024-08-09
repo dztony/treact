@@ -12,7 +12,7 @@ export default defineBuildConfig({
   name: 'index.mjs',
   declaration: false,
   failOnWarn: false,
-  // externals: [
-  //   ...Object.keys(pkg.devDependencies),
-  // ],
+  externals: [
+    /node_modules/
+  ],
 });
